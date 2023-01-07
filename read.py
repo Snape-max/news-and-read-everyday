@@ -12,41 +12,32 @@ c = str(a.select('title')).replace('<title>','').replace('</title>','').replace(
 k = ''
 for i in b:
     k+=str(i)
-        #qq邮箱smtp服务器
-k = "<style type='text/css'>p{text-indent:2em;}</style>"+k
-host_server = 'smtp.163.com'
-        #sender_qq为发件人的qq号码
-sender_qq = 'wpw12138@163.com'
-        #pwd为qq邮箱的授权码
-pwd = 'ARLYBVGDHDJELLSC'
-        #发件人的邮箱
-sender_qq_mail = 'wpw12138@163.com'
-        #收件人邮箱
-receiver = 'ssnape@qq.com'
-receiver2 = '1797552779@qq.com'
-        #邮件的正文内容
-mail_content = k
-        #邮件标题
-mail_title = c
 
-         #ssl登录
+k = "<style type='text/css'>p{text-indent:2em;}</style>"+k
+#the smtp server, you should change to yours
+host_server = 'smtp.example.com'
+#sender is the sender's email 
+sender = 'your-sender-email@example'
+#pwd
+pwd = 'your pwd'
+#receiver mail
+receiver = 'your-receiver-email@example.com'
+#the content of the eamil
+mail_content = k
+#the title of the email
+mail_title = c
+#ssl login
 smtp = SMTP_SSL(host_server)
-        #set_debuglevel()是用来调试的。参数值为1表示开启调试模式，参数值为0关闭调试模式
 smtp.set_debuglevel(0)
 smtp.ehlo(host_server)
-smtp.login(sender_qq_mail, pwd)
+smtp.login(sender, pwd)
 
 msg1 = MIMEText(mail_content, "html", 'utf-8')
 msg1["Subject"] = Header(mail_title, 'utf-8')
 msg1["From"] = 'Reading'
 msg1["To"] = receiver
 
-msg2 = MIMEText(mail_content, "html", 'utf-8')
-msg2["Subject"] = Header(mail_title, 'utf-8')
-msg2["From"] = 'Reading'
-msg2["To"] = receiver2
 smtp.sendmail(sender_qq_mail, receiver, msg1.as_string())
-smtp.sendmail(sender_qq_mail, receiver2, msg2.as_string())
 smtp.quit()
 
 
