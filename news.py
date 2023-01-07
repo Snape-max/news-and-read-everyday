@@ -8,7 +8,7 @@ html = requests.get(url)
 a = bs4.BeautifulSoup(html.content,features="html.parser")
 b = a.find_all('div',class_='focus_side')
 c = str(b).replace('[','').replace(']','')
-host_server = 'smtp.163.com'
+host_server = 'smtp.163.com'  # you should change to your-email-sender's host server
 
 sender_qq = 'youremail@example.com'
 
