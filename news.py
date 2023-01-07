@@ -10,14 +10,13 @@ b = a.find_all('div',class_='focus_side')
 c = str(b).replace('[','').replace(']','')
 host_server = 'smtp.163.com'
 
-sender_qq = 'wpw12138@163.com'
+sender_qq = 'youremail@example.com'
 
-pwd = 'ARLYBVGDHDJELLSC'
+pwd = 'yourpasswd' #so it is better to set your repository inprivate
 
-sender_qq_mail = 'wpw12138@163.com'
+sender_qq_mail = 'your-sender-email@example.com'
 
-receiver = 'ssnape@qq.com'
-receiver1 = '2926083239@qq.com'
+receiver = 'your-receiver-email@example.com'
         
 mail_content = c
 
@@ -35,5 +34,4 @@ msg["Subject"] = Header(mail_title, 'utf-8')
 msg["From"] = 'News'
 msg["To"] = receiver
 smtp.sendmail(sender_qq_mail, receiver, msg.as_string())
-smtp.sendmail(sender_qq_mail,receiver1, msg.as_string())
 smtp.quit()
