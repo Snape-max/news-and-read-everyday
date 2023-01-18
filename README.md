@@ -1,3 +1,4 @@
+![news-and-read-everyday](https://socialify.git.ci/Snape-max/news-and-read-everyday/image?font=Inter&forks=1&issues=1&language=1&name=1&owner=1&pattern=Plus&stargazers=1&theme=Auto)
 # news-and-read-everyday
 
 Use python and github action to send news and passages everyday.
